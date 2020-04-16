@@ -141,14 +141,14 @@ const Array &Array::operator+=( const int right ) {
         int *temp;
         temp = new int[getCapacity() + 1];
 
-        for (int i = 0; i < getCapacity(); i++) {}
+        for (int i = 0; i < getCapacity(); i++) {
             temp[i] = ptr[i];
-            ptr = temp;
+        }
+        ptr = temp;
+
     }
-        //return *this;
-    if (ptr[eltsInUse] == right) {
-        eltsInUse++;
-    }
+    ptr[getEltsInUse()] = right;
+    eltsInUse++;
 
     return *this;   // enables x = y = z;
 }
