@@ -97,7 +97,10 @@ bool Array::operator==(const Array &right) const
     if ( getCapacity() != right.getCapacity() )
         return false;    // arrays of different sizes
 
-    for ( int i = 0; i < getCapacity(); i++ )
+    if(getEltsInUse() != right.getEltsInUse())
+        return false; //arrays have different number of elements
+
+    for ( int i = 0; i < getEltsInUse(); i++ )
         if ( ptr[ i ] != right[ i ] )
             return false; // arrays are not equal
 
