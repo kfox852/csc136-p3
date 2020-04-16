@@ -28,8 +28,7 @@ public:
     void setCapacity(int);		    // set the capacity
     int getCapacity() const;                 // return capacity
 
-    //Function for the eltsInUse
-    int getEltsInUse() const;
+    int getEltsInUse() const; //Function to get the elements in use
 
     const Array &operator=(const Array & ); // assign arrays
     const Array &operator+=(const int); // assign arrays
@@ -40,7 +39,7 @@ public:
     const int &operator[](int) const;  // r-value subscript operator
     static int getArrayCount();          // Return count of arrays instantiated.
 
-
+    void sort(); //sort function
 
 private:
     int capacity, 		// capacity of the array

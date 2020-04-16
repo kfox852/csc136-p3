@@ -46,14 +46,9 @@ template <class eltType> void selSort(eltType *list,int items)
 // Templated Search function
 template <class eltType>
 int orderedSearch(eltType *list,int items,eltType key)
-{for (int i=0;i<items && list[i]<key;i++);
+{
+    int i;
+    for (i=0;i<items && list[i]<key;i++);
     if (i==items || list[i]>key) return(-1);
     return(i);
-}//
-// Created by Kelly Fox on 2020-04-15.
-//
-
-#ifndef P3_SORTSEARCH_H
-#define P3_SORTSEARCH_H
-
-#endif //P3_SORTSEARCH_H
+}

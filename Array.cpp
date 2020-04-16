@@ -17,6 +17,7 @@
 #include <iomanip>
 #include <assert.h>
 #include "Array.h"
+#include "SortSearch.h"
 
 using namespace std;
 
@@ -139,22 +140,27 @@ int Array::getArrayCount() { return arrayCount; }
 
 // Overloaded += assignment operator
 const Array &Array::operator+=( const int right ) {
+    if (getEltsInUse() == getCapacity()) { //if elements in use is equal to capacity
+        int *temp; //assign temporary
+        temp = new int[getCapacity() + 1]; //create new array with one more element
 
-    if (getEltsInUse() == getCapacity()) {
-        int *temp;
-        temp = new int[getCapacity() + 1];
-
-        for (int i = 0; i < getCapacity(); i++) {
+        for (int i = 0; i < getCapacity(); i++) { //loop through to copy each element out of ptr
             temp[i] = ptr[i];
         }
-        ptr = temp;
+        ptr = temp; //array ptr now equals the temporary created array
 
     }
-    ptr[getEltsInUse()] = right;
-    eltsInUse++;
+    ptr[getEltsInUse()] = right; //append element
+    eltsInUse++; //increment eltsInUse
 
     return *this;   // enables x = y = z;
 }
+
+//sort function
+void Array::sort() {
+    selSort <int> (ptr,eltsInUse);
+}
+
 
 // Overloaded output operator for class Array
 ostream &operator<<(ostream &output, const Array &a) {
