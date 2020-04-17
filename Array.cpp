@@ -153,6 +153,7 @@ const Array &Array::operator+=( const int right ) {
 
     }
     ptr[getEltsInUse()] = right; //append element
+
     eltsInUse++; //increment eltsInUse
 
     return *this;   // enables x = y = z;

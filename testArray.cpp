@@ -22,9 +22,9 @@ int main() {
     Array *list = new Array(2);
 
     // Add a value to the object
-    int TestTerm=5;
-    *list+=TestTerm;
-    *list+=3;
+    int TestTerm = 5;
+    *list += TestTerm;
+    *list += 3;
     // Output the Array. There should be one value printed.
     cout << *list << endl;
 
@@ -72,9 +72,10 @@ int main() {
     *list2 += 2;
     *list2 += 4;
 
+    //and testing sort
     list2->sort();
 
-    cout << "Test for adding elements using overloaded +=: " << *list2 <<endl;
+    cout << "Test for adding elements using overloaded +=: " << *list2 << endl;
 
     // Test array equality
     Array *lst1 = new Array(3);
@@ -86,34 +87,28 @@ int main() {
     *lst2 += 6;
     *lst2 += 6;
     if (*lst1 == *lst2) {
-        cout << "TPrint True" << endl;
+        cout << "If true, print true" << endl;
     }
 
-
     // Test array inequality
-
+    Array *inequality1 = new Array(2);
+    *lst1 += 5;
+    *lst1 += 4;
+    Array *inequality2 = new Array(2);
+    *lst2 += 5;
+    *lst2 += 3;
+    if (*lst1 != *lst2) {
+        cout << "If false, print false" << endl;
+    }
 
     // Test retrieving an array item by subscript
+    Array *subscriptArray = new Array(5);// = new Array(5);
+    *subscriptArray += 4;
+    *subscriptArray += 1;
+    *subscriptArray += 10;
+    *subscriptArray += 9;
+    *subscriptArray += 2;
 
-
-    // Test sorting an array
-
-
-    // Test that array counter is correct
+    cout << "The subscript should be 9: " << (*subscriptArray)[3] << endl;
 
 }
-
-    /*Array *list = new Array(3);
-    *list += 5;
-    *list += 10;
-    *list += 2;
-    *list += 7;
-    *list += 8;*/
-
-    // Add a value to the object
-    //int TestTerm=5;
-    //list+=TestTerm;
-
-    // Output the Array. There should be one value printed.
-    //cout << *list << endl;
-    //return(0);
