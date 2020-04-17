@@ -31,7 +31,7 @@ public:
     int getEltsInUse() const; //Function to get the elements in use
 
     const Array &operator=(const Array & ); // assign arrays
-    const Array &operator+=(const int); // assign arrays
+    const Array &operator+=(const int); // append array
     bool operator==( const Array & ) const;  // compare equal
     bool operator!=(const Array &right) const;   // Determine if two arrays are not equal
 

@@ -79,6 +79,7 @@ const Array &Array::operator=(const Array &right)
         // left side array, then allocate new left side array.
         if ( getCapacity() != right.getCapacity() ) {
             delete [] ptr;         // reclaim space
+            eltsInUse = right.getEltsInUse();
             setCapacity(right.getCapacity());     // resize this object
             ptr = new int[getCapacity()]; // create space for array copy
             assert( ptr != 0 );    // terminate if not allocated
@@ -147,6 +148,7 @@ const Array &Array::operator+=( const int right ) {
         for (int i = 0; i < getCapacity(); i++) { //loop through to copy each element out of ptr
             temp[i] = ptr[i];
         }
+        capacity++;
         ptr = temp; //array ptr now equals the temporary created array
 
     }
