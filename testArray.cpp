@@ -19,21 +19,6 @@
 using namespace std;
 
 int main() {
-    Array *list = new Array(2);
-
-    // Add a value to the object
-    int TestTerm = 5;
-    *list += TestTerm;
-    *list += 3;
-    // Output the Array. There should be one value printed.
-    cout << *list << endl;
-
-    /*Array *list = new Array(2);
-    *list += 5;
-    *list += 10;*/
-
-
-
 
     // Getters and setters tested in various tests below
     // Don't need to test individually
@@ -44,7 +29,7 @@ int main() {
 
     // Test constructor with arg and make sure capacity is correct
     Array *argTest = new Array(5);
-    cout << "Capacity argTest should be 5: " << argTest->getCapacity() << endl;
+    cout << "Capacity of argTest should be 5: " << argTest->getCapacity() << endl;
 
     // Test copying an array
     Array *arrayOriginal = new Array(3);
@@ -52,8 +37,6 @@ int main() {
     *arrayOriginal += 1;
     *arrayOriginal += 6;
     Array *arrayCopy = new Array(*arrayOriginal);
-    //Dont forget to check for capacity and eltsInUse
-
     cout << "Array copy should be [7,1,6]: " << *arrayCopy << endl;
 
     //Test assignment of one array to another
@@ -62,7 +45,6 @@ int main() {
     *arrayAssignmentOriginal += 7;
     Array *arrayAssignment = new Array(3);
     *arrayAssignment = *arrayAssignmentOriginal;
-
     cout << "Array assignment from one array to another: " << *arrayAssignment << endl;
 
     // Test adding elements using overloaded +=
@@ -74,7 +56,6 @@ int main() {
 
     //and testing sort
     list2->sort();
-
     cout << "Test for adding elements using overloaded +=: " << *list2 << endl;
 
     // Test array equality
